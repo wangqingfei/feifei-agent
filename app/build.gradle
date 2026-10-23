@@ -1,0 +1,67 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.mini.agent'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.mini.agent"
+        minSdk 26
+        targetSdk 34
+        versionCode 71
+        versionName "0.71"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    // JavaMail 的 mail 与 activation 两个 jar 都带这几个文件，打包时会冲突
+    packaging {
+        resources {
+            excludes += ['META-INF/LICENSE.md', 'META-INF/LICENSE-notice.md', 'META-INF/NOTICE.md']
+        }
+    }
+
+    // 打包签名：本地有 personal.jks 就用它（可覆盖安装）；没有就降级 debug 签名（仅自己构建测试用）。
+    // 钥匙不进仓库：口令从 gradle.properties（FEIFEI_STORE_PASS / FEIFEI_KEY_PASS）或环境变量读。
+    def hasJks = file("personal.jks").exists()
+
+    signingConfigs {
+        if (hasJks) {
+            personal {
+                storeFile file("personal.jks")
+                storePassword project.findProperty("FEIFEI_STORE_PASS") ?: System.getenv("FEIFEI_STORE_PASS") ?: "minipass"
+                keyAlias "mini"
+                keyPassword project.findProperty("FEIFEI_KEY_PASS") ?: System.getenv("FEIFEI_KEY_PASS") ?: "minipass"
+            }
+        }
+    }
+    buildTypes.all {
+        if (hasJks) signingConfig signingConfigs.personal
+    }
+}
+
+dependencies {
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'org.jsoup:jsoup:1.17.2'
+    implementation 'androidx.work:work-runtime-ktx:2.9.0'
+    implementation 'androidx.core:core:1.12.0'
+    implementation 'androidx.drawerlayout:drawerlayout:1.2.0'
+    implementation 'com.sun.mail:android-mail:1.6.7'
+    implementation 'com.sun.mail:android-activation:1.6.7'
+}
