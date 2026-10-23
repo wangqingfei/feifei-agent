@@ -115,7 +115,7 @@ log.jsonl          运行日志
 
 ### 直接用
 
-下载 Release 里的 `MiniAgent-0.71.apk`，装到 Android 8.0+ 手机上。
+下载 Release 里的 `MiniAgent-0.72.apk`，装到 Android 8.0+ 手机上。
 设置页填 baseUrl / apiKey / model → 点「测试」→ 开始用。
 
 ### 自己构建
