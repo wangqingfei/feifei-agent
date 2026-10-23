@@ -18,8 +18,21 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      # GitHub runner 自带 cmdline-tools；这里只用现成的 sdkmanager 装构建所需组件。
+      # 不用 android-actions/setup-android：它还在尝试安装已被移除的 "tools" 包，会直接失败。
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+        run: |
+          SM=$(find "$ANDROID_HOME/cmdline-tools" -name sdkmanager -path "*/bin/*" 2>/dev/null | head -1)
+          if [ -z "$SM" ]; then
+            mkdir -p "$ANDROID_HOME/cmdline-tools"
+            curl -sL -o /tmp/c.zip https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+            unzip -q /tmp/c.zip -d "$ANDROID_HOME/cmdline-tools"
+            mv "$ANDROID_HOME/cmdline-tools/cmdline-tools" "$ANDROID_HOME/cmdline-tools/latest"
+            SM="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          fi
+          echo "using sdkmanager: $SM"
+          yes | "$SM" --licenses > /dev/null 2>&1 || true
+          "$SM" "platform-tools" "platforms;android-34" "build-tools;34.0.0"
 
       - name: Build release
         run: |
