@@ -1,0 +1,46 @@
+name: 功能建议
+description: 建议一个新功能或改进
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提建议前请先看 `HISTORY.md` —— 那里记录了一些**做过又撤掉**的功能和理由，避免重复提案。
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 你想解决什么问题
+      description: 说场景，别说方案。例如「我每天要看 AI 新闻，现在要手动问」而不是「加一个 RSS 工具」
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: 你设想的做法
+      description: 如果已经有思路，说个大概；没有就留空
+    validations:
+      required: false
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: 建议类型
+      options:
+        - 新工具（调用新的手机/网络能力）
+        - 现有工具改进
+        - 界面 / 交互
+        - 性能 / 稳定性
+        - 文档
+        - 其他
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 确认
+      options:
+        - label: 我看了 HISTORY.md，确认这个功能没有被做过又撤掉
+          required: true
+        - label: 我理解这是个人自用工具，功能会按「解决真实问题」的标准取舍
+          required: true
