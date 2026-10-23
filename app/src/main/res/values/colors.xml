@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 图标底：极浅暖白。自适应图标必须有背景层，纯透明在部分启动器上会被画成黑色 -->
+    <color name="iconBg">#FFF8F2</color>
+
+    <!-- 底色：暖米，不用纯白，降低亮度 -->
+    <color name="bg">#F7F0E9</color>
+    <color name="surface">#FEFBF7</color>
+    <color name="field">#FBF4EC</color>
+    <color name="page_bg">#F7F0E9</color>
+
+    <!-- 文字：不用纯黑，用带暖调的深棕 -->
+    <color name="ink">#2E2620</color>
+    <color name="ink_soft">#3F342B</color>
+    <color name="muted">#8C7C6E</color>
+    <color name="on_accent">#FFF9F3</color>
+
+    <!-- 线 -->
+    <color name="line">#EADFD2</color>
+    <color name="field_line">#E5D8C9</color>
+
+    <!-- 主色：暖橙，介于陶土与赤陶之间 -->
+    <color name="accent">#C4693F</color>
+    <color name="accent_off">#E8CDBB</color>
+    <color name="bubble_user">#C4693F</color>
+
+    <!-- 形象用色（小飞身体渐变三档） -->
+    <color name="face_light">#E08A5E</color>
+    <color name="face_mid">#C4693F</color>
+    <color name="face_dark">#9E4E28</color>
+    <color name="face_belly">#FFF3E8</color>
+    <color name="face_beak">#E9B07A</color>
+
+    <!-- 代码块 -->
+    <color name="code_bg">#F2E8DD</color>
+    <color name="code_line">#E0CFBC</color>
+    <color name="code_fg">#6B3E22</color>
+
+    <!-- 过程记录面板：比代码块再浅一点，别抢正文的视觉重量 -->
+    <color name="trace_bg">#F6F1EA</color>
+    <color name="trace_line">#E5DACB</color>
+
+    <!-- 链接与错误 -->
+    <color name="link">#A85B33</color>
+    <color name="danger">#B3544F</color>
+</resources>
