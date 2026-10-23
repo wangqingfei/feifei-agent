@@ -5,7 +5,7 @@
       "id": "cmecloud",
       "name": "移动云",
       "baseUrl": "https://zhenze-huhehaote.cmecloud.cn/v1",
-      "apiKey": "8wt4****RmUA",
+      "apiKey": "your-api-key-here",
       "model": "Qwen3.5-27B",
       "temperature": 0.5,
       "maxTokens": 4096
