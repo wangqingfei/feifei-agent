@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg"
+    android:scrollbars="none"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <!-- 卡片一：接口与模型 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="接口与模型"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/ink" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="6dp"
+                android:text="接口地址"
+                android:textSize="12sp"
+                android:textColor="@color/muted" />
+
+            <EditText
+                android:id="@+id/etBase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="https://.../v1"
+                android:inputType="textUri"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="14sp"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="6dp"
+                android:text="模型（点一下换）"
+                android:textSize="12sp"
+                android:textColor="@color/muted" />
+
+            <TextView
+                android:id="@+id/tvModel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="13dp"
+                android:paddingBottom="13dp"
+                android:textSize="14sp"
+                android:textColor="@color/accent"
+                android:text="deepseek-v4.1-flash" />
+
+            <TextView
+                android:id="@+id/tvProvider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_field"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="13dp"
+                android:paddingBottom="13dp"
+                android:textSize="14sp"
+                android:textColor="@color/ink_soft"
+                android:text="当前接口：移动云" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="已实测：deepseek-v4.1-flash / glm-5.3-flash / Qwen3.5-27B / qwen3.5-397b-a17b"
+                android:textSize="11sp"
+                android:lineSpacingExtra="2dp"
+                android:textColor="@color/muted" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="6dp"
+                android:text="API Key"
+                android:textSize="12sp"
+                android:textColor="@color/muted" />
+
+            <EditText
+                android:id="@+id/etKey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="只存在本机"
+                android:inputType="textPassword"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="14sp"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/btnTest"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_field"
+                android:stateListAnimator="@null"
+                android:text="测试连接"
+                android:textColor="@color/ink_soft"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- 卡片二：每日简报 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="定时任务"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/ink" />
+
+            <TextView
+                android:id="@+id/tvManageTasks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_field"
+                android:padding="14dp"
+                android:text="管理定时任务 ›"
+                android:textSize="14sp"
+                android:textColor="@color/accent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="可以加多条，时间自己定；也能直接在对话里说「每天早上七点提醒我」"
+                android:textSize="12sp"
+                android:textColor="@color/muted" />
+        </LinearLayout>
+
+        <!-- 卡片三：位置 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="位置"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/ink" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="兜底用。平时自动实时定位，测不到、或网络位置不准时，才用这里填的。"
+                android:textSize="11sp"
+                android:textColor="@color/muted" />
+
+            <EditText
+                android:id="@+id/etCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_field"
+                android:hint="例如：山东泰安"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="14sp"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <!-- 卡片四：邮箱 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="邮箱"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/ink" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="2dp"
+                android:text="QQ / 163 邮箱需要先到网页版开通 IMAP，并使用「授权码」而不是登录密码。"
+                android:textSize="11sp"
+                android:textColor="@color/muted" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="6dp"
+                android:text="邮箱地址"
+                android:textSize="12sp"
+                android:textColor="@color/muted" />
+
+            <EditText
+                android:id="@+id/etMailUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="xxx@qq.com"
+                android:inputType="textEmailAddress"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="14sp"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="6dp"
+                android:text="授权码"
+                android:textSize="12sp"
+                android:textColor="@color/muted" />
+
+            <EditText
+                android:id="@+id/etMailPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="不是登录密码"
+                android:inputType="textPassword"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="14sp"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="6dp"
+                android:text="服务器（留空按邮箱后缀自动判断）"
+                android:textSize="12sp"
+                android:textColor="@color/muted" />
+
+            <EditText
+                android:id="@+id/etMailImap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="imap.qq.com"
+                android:inputType="textUri"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="14sp"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/etMailSmtp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_field"
+                android:hint="smtp.qq.com"
+                android:inputType="textUri"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="14sp"
+                android:singleLine="true" />
+
+            <CheckBox
+                android:id="@+id/cbMailSend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:buttonTint="@color/accent"
+                android:text="允许发信（开启后我可以代你发）"
+                android:textSize="13sp"
+                android:textColor="@color/ink_soft" />
+
+            <Button
+                android:id="@+id/btnMailTest"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_field"
+                android:stateListAnimator="@null"
+                android:text="测试邮箱连接"
+                android:textColor="@color/ink_soft"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="百度网盘"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/ink" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="2dp"
+                android:text="在百度网盘开放平台的「网盘 API 服务」页发起授权，从跳转后的地址栏复制 access_token 填进来。有效期 30 天，到期要重新复制。"
+                android:textSize="11sp"
+                android:textColor="@color/muted" />
+
+            <EditText
+                android:id="@+id/etNetdiskToken"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_field"
+                android:hint="access_token（123.xxxx 开头那串）"
+                android:inputType="text"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="13sp"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/btnNetdiskTest"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_field"
+                android:stateListAnimator="@null"
+                android:text="测试网盘连接"
+                android:textColor="@color/ink_soft"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="高德地图"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/ink" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="2dp"
+                android:text="定位时自动渲染地图需要高德 JS API 的 Key 和安全密钥。去 lbs.amap.com 控制台申请「Web 端（JS API）」，并把这个 Key 的域名白名单加上 127.0.0.1 和 localhost，否则本机加载会失败。"
+                android:textSize="11sp"
+                android:textColor="@color/muted" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="6dp"
+                android:text="Key"
+                android:textSize="12sp"
+                android:textColor="@color/muted" />
+
+            <EditText
+                android:id="@+id/etAmapKey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="32 位字符串"
+                android:inputType="text"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="13sp"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp"
+                android:text="安全密钥（securityJsCode，可选）"
+                android:textSize="12sp"
+                android:textColor="@color/muted" />
+
+            <EditText
+                android:id="@+id/etAmapSecurity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="配了安全密钥才需要填"
+                android:inputType="text"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="13sp"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="6dp"
+                android:text="Web 服务 Key（逆地理出文字地址用，可选）"
+                android:textSize="12sp"
+                android:textColor="@color/muted" />
+
+            <EditText
+                android:id="@+id/etAmapWebKey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_field"
+                android:hint="和 JS API 是两种 key，类型要选 Web 服务"
+                android:inputType="text"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="13sp"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="隐私权限"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/ink" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="2dp"
+                android:text="通讯录、拨号、短信都属于敏感权限，默认都是关的。哪项用得到就开哪项，不用就留关。拒绝过一次之后系统不再弹窗，需要去系统设置里开。"
+                android:textSize="11sp"
+                android:textColor="@color/muted" />
+
+            <LinearLayout
+                android:id="@+id/permList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical" />
+
+            <CheckBox
+                android:id="@+id/cbDirectCall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:buttonTint="@color/accent"
+                android:text="允许直接拨出（关掉时只打开拨号盘，你按一下才打）"
+                android:textSize="13sp"
+                android:textColor="@color/ink_soft" />
+
+            <CheckBox
+                android:id="@+id/cbSendSms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:buttonTint="@color/accent"
+                android:text="允许直接发短信（会实际发送、实际扣费）"
+                android:textSize="13sp"
+                android:textColor="@color/ink_soft" />
+
+            <CheckBox
+                android:id="@+id/cbNotifEnabled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:buttonTint="@color/accent"
+                android:text="启用通知采集（关了就不再记录通知内容）"
+                android:textSize="13sp"
+                android:textColor="@color/ink_soft" />
+
+            <Button
+                android:id="@+id/btnNotifAccess"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_field"
+                android:stateListAnimator="@null"
+                android:text="通知读取"
+                android:textColor="@color/ink_soft"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnViewLog"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_field"
+            android:stateListAnimator="@null"
+            android:text="查看运行日志"
+            android:textColor="@color/ink_soft"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnViewCrash"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_field"
+            android:stateListAnimator="@null"
+            android:text="查看崩溃日志"
+            android:textColor="@color/ink_soft"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_btn_primary"
+            android:stateListAnimator="@null"
+            android:text="保存"
+            android:textColor="@color/on_accent"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>
