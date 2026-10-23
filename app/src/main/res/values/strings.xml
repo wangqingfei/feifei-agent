@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 桌面图标名，短一点，桌面才不会被截断 -->
+    <string name="app_name">飞飞</string>
+    <!-- 应用内标题栏 -->
+    <string name="app_title">飞飞智能体</string>
+</resources>
