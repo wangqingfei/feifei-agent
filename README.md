@@ -1,13 +1,20 @@
 # 飞飞 · 手机端极简智能体
 
+[![Build](https://github.com/wangqingfei/feifei-agent/actions/workflows/build.yml/badge.svg)](https://github.com/wangqingfei/feifei-agent/actions/workflows/build.yml)
+[![Release](https://img.shields.io/github/v/release/wangqingfei/feifei-agent)](https://github.com/wangqingfei/feifei-agent/releases)
 [![Android](https://img.shields.io/badge/Android-8.0%2B-brightgreen)](https://developer.android.com)
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.24-blue)](https://kotlinlang.org)
-[![Size](https://img.shields.io/badge/APK-2.8%20MB-lightgrey)](https://github.com)
+[![Size](https://img.shields.io/badge/APK-2.8%20MB-lightgrey)](https://github.com/wangqingfei/feifei-agent/releases)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![Deps](https://img.shields.io/badge/依赖-7 个-blueviolet)](#极简体现在哪)
 
 一个装在自己手机里的 AI 智能体。**不是一个聊天 App，是一个能动手的助手**——它能读短信、查通讯录、打电话、看通知、定位、画地图、下载文件、发邮件、跑代码。
 
 > **一句话**：自己写的 ReAct 单循环 + 24 个工具，纯 Kotlin，2.8 MB，跑在 Android 8.0+ 的手机上。
+
+**📦 直接试用**：[下载最新 APK](https://github.com/wangqingfei/feifei-agent/releases/latest) → 安装 → 设置页填 API Key → 开始用。
+**🤖 用 AI 接手这个项目**：读 [`AGENTS.md`](AGENTS.md)。
+**🔧 想改它**：读 [`CONTRIBUTING.md`](CONTRIBUTING.md)，五分钟能跑起构建。
 
 ---
 
@@ -142,9 +149,50 @@ cd feifei
 
 | 文件 | 内容 |
 |---|---|
+| [`AGENTS.md`](AGENTS.md) | **给 AI 接手用的**：最小必要信息 + 10 条硬性规则，新对话从这里开始 |
 | [`START-HERE.md`](START-HERE.md) | 这**是什么**：功能清单、已知问题、下一步 |
 | [`DEVELOP.md`](DEVELOP.md) | 怎么**改**：57 个文件的代码地图、怎么加工具、自检命令、踩坑表 |
-| [`HISTORY.md`](HISTORY.md) | 为什么**这么做**：提示词实测踩的坑、工具描述四条发现、做过又撤掉的、完整版本演进 |
+| [`HISTORY.md`](HISTORY.md) | 为什么**这么做**：提示词实测坑、工具描述四条发现、做过又撤掉的、完整版本演进 |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | 怎么参与：提 Issue / PR 的要求 |
+| [`SECURITY.md`](SECURITY.md) | 安全问题怎么报告 + 已知安全边界 |
+
+---
+
+## 常见问题
+
+**Q：为什么不用 Jetpack Compose？**
+XML View 对这个量级够用，而且构建快、包体小。项目哲学是「依赖越少越好」。
+
+**Q：为什么聊天界面不用 RecyclerView？**
+消息量小（几十条），ScrollView + LinearLayout 手工建 View 更简单直接。长会话性能一般，是已知取舍。
+
+**Q：能接别的模型吗？**
+能。任何 OpenAI 兼容接口都行——`config.json` 里配 baseUrl / apiKey / model，
+设置页可加多套接口随时切换。已实测过移动云 MoMA、DeepSeek 系列；指向本机 Ollama 也支持。
+
+**Q：为什么没有语音输入？**
+路线图里有，没做。麦克风权限代码已预留（`RECORD_AUDIO` 已在清单）。
+
+**Q：我 fork 了之后能直接编出可覆盖安装的包吗？**
+不能——签名钥匙不在仓库里（`app/personal.jks` 被刻意排除）。你会得到 unsigned APK，
+自己签一把就行。**别用仓库描述里的方式去分发**，自用没问题。
+
+**Q：某个功能在我手机上完全不能用？**
+大概率不是你用错了——**这个项目大部分功能只编译过没在真机跑过**。请提 Issue，那是在帮我。
+
+---
+
+## 路线图（欢迎认领）
+
+| 优先级 | 事项 | 难度 |
+|---|---|---|
+| 高 | **真机逐项验证**（定时任务、web_app、run_js、通讯录、地图白名单、v0.71 三件套） | 低（要的是设备，不是代码） |
+| 中 | `make_pdf` 工具（`android.graphics.pdf.PdfDocument`，路线图第 5 步唯一未做的） | 中 |
+| 中 | 会话重命名 / 长按删单个 | 中 |
+| 低 | 语音输入（麦克风权限已预留） | 中 |
+| 低 | 崩溃日志导出成文件分享（目前只能复制） | 低 |
+
+完整已知问题见 [`START-HERE.md`](START-HERE.md)。
 
 ---
 
