@@ -60,7 +60,7 @@ object EmailClient {
         val user = p.getString("mailUser", "").orEmpty().trim()
         val pass = p.getString("mailPass", "").orEmpty().trim()
 
-        if (user.isEmpty()) return "邮箱还没填。请让用户去 设置 → 邮箱 填写邮箱地址（例如 136xxxxxxxx@139.com）。"
+        if (user.isEmpty()) return "邮箱还没填。请让用户去 设置 → 邮箱 填写邮箱地址（例如 yourname@example.com）。"
         if (!user.contains("@")) return "邮箱地址不完整：「$user」缺少 @域名。139 邮箱应填 手机号@139.com。"
         if (pass.isEmpty()) return "授权码还没填。请让用户去 设置 → 邮箱 填写授权码（不是登录密码）。"
 
