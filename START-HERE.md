@@ -1,4 +1,4 @@
-# 飞飞智能体 · 接手第一页（v0.71）
+# 飞飞智能体 · 接手第一页（v0.72）
 
 > 给下一个对话看的。三分钟读完，不用翻历史。
 
@@ -6,7 +6,7 @@
 
 安卓原生 App（`com.mini.agent`），纯 Kotlin + XML View，自己写的 ReAct 单循环 + **24 个工具**，跑在手机上，模型走任何 OpenAI 兼容接口。**自用工具，不是产品。**
 
-装机：`MiniAgent-0.71.apk`（Android 8.0+，2.8 MB，已签名）。
+装机：`MiniAgent-0.72.apk`（Android 8.0+，2.8 MB，已签名）。
 
 ## 怎么接上（最重要）
 
@@ -29,7 +29,7 @@
 | `DEVELOP.md` | 怎么**改**：57 个文件各干什么、怎么加工具、自检命令、踩坑表 | 动手前 |
 | `HISTORY.md` | 为什么**这么做**：提示词实测坑、工具描述四条发现、做过又撤掉的、完整版本演进 | 改提示词/工具描述前，或想重做某个功能前 |
 
-> 本包只含**源码 + 两份文档 + v0.71 APK**。`build/`、`.gradle/`、历史 APK、临时 wheel 等中间产物已全部删除。
+> 本包只含**源码 + 三份文档 + v0.72 APK**。`build/`、`.gradle/`、历史 APK、临时 wheel 等中间产物已全部删除。
 > 源码已带 git 基线（`git log` 可看演进，`git diff HEAD~1` 可看改了什么）。
 
 ### 装完先做这三步
@@ -230,6 +230,6 @@ files/agent/
 ---
 
 最后更新：2026-10-23
-当前版本：v0.71（versionCode 71）
+当前版本：v0.72（versionCode 72）
 源码目录：`feifei-v0.71/`
 模型：移动云 MoMA，Base URL `https://zhenze-huhehaote.cmecloud.cn/v1`，`Qwen3.5-27B`
