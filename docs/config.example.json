@@ -1,0 +1,28 @@
+{
+  "active": "cmecloud",
+  "providers": [
+    {
+      "id": "cmecloud",
+      "name": "移动云",
+      "baseUrl": "https://zhenze-huhehaote.cmecloud.cn/v1",
+      "apiKey": "8wt4****RmUA",
+      "model": "Qwen3.5-27B",
+      "temperature": 0.5,
+      "maxTokens": 4096
+    },
+    {
+      "id": "local",
+      "name": "本机 Ollama",
+      "baseUrl": "http://127.0.0.1:11434/v1",
+      "apiKey": "ollama",
+      "model": "qwen3:8b",
+      "temperature": 0.6,
+      "maxTokens": 2048
+    }
+  ],
+  "agent": {
+    "maxTurns": 4,
+    "backgroundTurns": 6,
+    "maxToolCalls": 10
+  }
+}
