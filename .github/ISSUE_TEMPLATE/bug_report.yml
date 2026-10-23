@@ -1,0 +1,73 @@
+name: Bug 报告
+description: 报告一个 bug（请尽量填全，能修的概率高很多）
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提交前请确认：版本号已填、崩溃日志已贴（如果是崩溃）、没有重复 Issue。
+
+  - type: input
+    id: version
+    attributes:
+      label: 版本号
+      description: 设置页或 Release 页可见，形如 v0.72
+      placeholder: v0.72
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: 手机型号与系统版本
+      placeholder: 如 小米 12 / Android 14
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: 发生了什么
+      description: 说清你期望的行为和实际的行为
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开 App
+        2. 发送「...」
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: crash
+    attributes:
+      label: 崩溃日志（崩溃类问题必填）
+      description: App 内「设置 → 查看崩溃日志 → 复制全部」
+      render: text
+
+  - type: textarea
+    id: trace
+    attributes:
+      label: 过程记录（如可用）
+      description: 对话下方「过程记录」面板展开后复制，能看出模型当时做了什么
+      render: text
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 涉及功能
+      options:
+        - 对话 / 界面
+        - 工具调用（搜索/天气/邮箱等）
+        - 定时任务
+        - 会话管理
+        - 短信 / 通讯录 / 电话 / 通知
+        - 地图 / 位置
+        - 文件 / 下载 / 分享
+        - 构建 / 安装
+        - 其他
