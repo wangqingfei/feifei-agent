@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 极浅暖白打底：纯透明在部分启动器上会被渲染成黑色，这里是"看起来像没底"的安全做法 -->
+    <background android:drawable="@color/iconBg" />
+    <foreground android:drawable="@drawable/ic_foreground" />
+</adaptive-icon>
