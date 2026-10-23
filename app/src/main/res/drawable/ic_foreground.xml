@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 尾巴：最深的一层，压在身子下面 -->
+    <path android:pathData="M50,73 Q43,81 37,89 Q46,85 52,78 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="43" android:startY="73"
+                android:endX="45" android:endY="89">
+                <item android:offset="0" android:color="#FF9E4E28" />
+                <item android:offset="1" android:color="#FF8A3F1D" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:pathData="M58,73 Q65,81 71,89 Q62,85 56,78 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="65" android:startY="73"
+                android:endX="63" android:endY="89">
+                <item android:offset="0" android:color="#FF9E4E28" />
+                <item android:offset="1" android:color="#FF8A3F1D" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- 翅膀：线性渐变，上亮下暗，和身体分层 -->
+    <path android:pathData="M36,52 Q22,43 17,54 Q29,57 36,63 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="0" android:startY="42"
+                android:endX="0" android:endY="64">
+                <item android:offset="0" android:color="#FFE08A5E" />
+                <item android:offset="1" android:color="#FF9E4E28" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:pathData="M72,52 Q86,43 91,54 Q79,57 72,63 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="0" android:startY="42"
+                android:endX="0" android:endY="64">
+                <item android:offset="0" android:color="#FFE08A5E" />
+                <item android:offset="1" android:color="#FF9E4E28" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- 身体：径向渐变，光源在左上 -->
+    <path android:pathData="M54,29 a25,25 0 1,0 0.1,0 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="46" android:centerY="44"
+                android:gradientRadius="37">
+                <item android:offset="0" android:color="#FFE9A276" />
+                <item android:offset="0.45" android:color="#FFC4693F" />
+                <item android:offset="1" android:color="#FF9A4A25" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- 肚皮：偏下的浅色，制造"正面受光"的错觉 -->
+    <path
+        android:fillColor="#66FFF3E8"
+        android:pathData="M54,61 m-15,0 a15,11.5 0 1,0 30,0 a15,11.5 0 1,0 -30,0" />
+
+    <!-- 左上高光 -->
+    <path
+        android:fillColor="#3DFFFFFF"
+        android:pathData="M47,43 m-9,0 a9,5.6 0 1,0 18,0 a9,5.6 0 1,0 -18,0" />
+
+    <!-- 呆毛 -->
+    <path
+        android:pathData="M54,29 Q56,21 64,17"
+        android:strokeColor="#FF9E4E28"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round" />
+
+    <!-- 眼睛：实心深棕 + 一点高光 -->
+    <path
+        android:fillColor="#FF2E2620"
+        android:pathData="M45,49 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0" />
+    <path
+        android:fillColor="#FF2E2620"
+        android:pathData="M63,49 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0" />
+    <path
+        android:fillColor="#E6FFFFFF"
+        android:pathData="M43.4,47.2 m-1.9,0 a1.9,1.9 0 1,0 3.8,0 a1.9,1.9 0 1,0 -3.8,0" />
+    <path
+        android:fillColor="#E6FFFFFF"
+        android:pathData="M61.4,47.2 m-1.9,0 a1.9,1.9 0 1,0 3.8,0 a1.9,1.9 0 1,0 -3.8,0" />
+
+    <!-- 喙 -->
+    <path android:pathData="M49.5,60 L58.5,60 L54,68.5 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="54" android:startY="60"
+                android:endX="54" android:endY="68.5">
+                <item android:offset="0" android:color="#FFF0BC8C" />
+                <item android:offset="1" android:color="#FFD9955E" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>
